@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando valores</title>
+    <style>
+        body{/*Parte em Css do body*/
+            font: normal 18pt Arial;
+            background-color: beige;
+            padding: 40pt;
+        }
+
+        #res1{
+            font: normal 15pt Arial;
+            background-color: green;
+            color: white;
+            margin-top: 20px;
+            width: 300px;
+            margin-left: 20px;
+            }
+
+        #res2{
+            font: normal 15pt Arial;
+            background-color: green;
+            color: white;
+            margin-top: 20px;
+            width: 300px;
+            margin-left: 20px;
+        }
+
+        input{/*Dá para colocar como serão as letras do input*/
+            font: normal 10pt Arial;
+            width: 100px
+        }
+        
+        #p{/*id é com #*/
+            font: normal 10pt Arial;
+            margin-left: 120px;
+         }
+
+         #calc{
+             margin-left: 20px;
+         }
+    </style>
+</head>
+<body>
+    <h1 id="calc">Calculadora</h1>
+    <p id="p">Digite 3 números</p>
+    <input type="number" name="inputn1" id="inputn1"><!--Input tipo(número) vai aparecer uma caixa pedindo para colocar um número-->
+    <input type="number" name="inputn2" id="inputn2"><!--name é para usar em php, não há problema em id se chamar o mesmo-->
+    <input type="number" name="inputn3" id="inputn3"><!--Input também pode pedir outras coisas, tipo uma frase (text)-->
+    <div id="res1">Clique para <!--declarei uma id aqui para customizar-->
+        <input type="button" value="Somar" onclick="somar()"> <!--Como o input pede alguma coisa, nesse caso aparece um botão, onde value é o nome dentro do botão e onclick vai chamar a função denominada nome()-->
+    </div>
+
+    <div id="res2">Multiplicação <!--Segundo div com id diferente-->
+        <input type="button" value="Multiplicar" onclick="Multiplicar()"><!--O input é um botão, com nome(value) de Multiplicar, ao clicar, vai chamar function Multiplicar()-->
+    </div>
+
+    <script>
+        let txt1 = document.getElementById('inputn1') //a variavel let txt1 RECEBE o valor da ID inputn1
+        let txt2 = document.getElementById('inputn2') //a variavel let txt2 RECEBE o valor da ID inputn2
+        let txt3 = document.getElementById('inputn3') // quem são esses valores de ID? a própria input
+        let res = document.getElementById('res1') // a variavel res RECEBE oque está em res1 ("Clique para")
+        
+
+        function somar(){//A função somar() ao ser chamada diz que:
+        let n1 = Number(txt1.value)//a variavel n1 RECEBE/AGORA É um NÚMERO onde o VALOR de txt1 vira NÚMERO
+        let n2 = Number(txt2.value)//Complicado? let n2 Recebe o valor de txt2 que vira Number(número)
+        let n3 = Number(txt3.value)//Dessa forma diz-que o valor de txt vai virar número e será atribuído a n3
+        let soma = n1 + n2 + n3//Tem que guardar um dado que some as outras variáveis 
+        res.innerText = `A soma de ${n1}, ${n2} e ${n3} é igual à: ${soma}`//res é uma variável que recebeu oque estava dentro do ID res1(linha 66), agora res.innerText iremos dizer que ela recebe o texto a direita
+        }
+
+        function Multiplicar(){//Mesma coisa da outra função
+        let n1 = Number(txt1.value)
+        let n2 = Number(txt2.value)
+        let n3 = Number(txt3.value)
+        let soma = n1 * n2 * n3
+        res2.innerText = `A multiplicação de ${n1}, ${n2} e ${n3} é igual à: ${soma}`
+        }
+         //Multiplicar() Note que o Javascript, assim como outras sintaxes, ler de cima pra baixo, um input geralmente é 0. Se você pede um
+         //número para ser colocado no input, tenha certeza que só será usado na função se ela fizer isso. Por exemplo, eu estava tentando
+         //usar um número do input, sendo que ao rodar o programa, ele lia tudo e já colocava o número padrão no input, que é ZERO.
+         //dessa forma, para DEIXAR A PÁGINA PRONTA PARA RECEBER O NÚMERO, você deve deixar alguns números dentro do function
+         //para que a forma padrão deles seja trabalhada SOMENTE APÓS o usuário digitar algo
+         //Para entender melhor, se você colocar funçãonome() no final, o JS vai ler tudo e no final vai executar a função sem que o
+         //usuário tenha preenchido NADA do input.
+
+    </script>
+    
+</body>
+</html>
