@@ -1,0 +1,206 @@
+body{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    margin-bottom: 400px;
+}
+
+:root{/*Isso é um var, todas as vezes que você chamar um --(nome), ele vai atribuir a cor ao noem chamado*/
+    --primeiro: #2bff00;/*esse --(você poem o nome) e logo em seguida o código para achar a cor*/
+    --secondary: hsla(132, 100%, 50%, 0.75);
+    --text-color: rgb(0, 0, 0);
+    --text-secondary: #000;
+    --text-tertiary: #5d5d5d;
+}
+
+#event-description{
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+    url("../img/002.jpg");
+    background-position: center; /*Centralizar a foto*/
+    background-size: cover;/*aparecer o máximo na área útil*/
+    height: 85vh;/*Aqui colocamos para deixar um espaço no fim da tela*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--text-color)
+}
+
+#disclaimer h2,
+#disclaimer .event-date{
+    color: var(--primeiro)
+}
+
+#disclaimer h2{
+    font-size: 3em;/*Aparentemente o 'em' é responsivo, diferente o pixels*/
+    margin-bottom: 1em;
+}
+
+#disclaimer .about-event {
+    font-size: 2em;
+    text-transform: uppercase;/*Transformando todos caracteres em maiusculo*/
+    max-width: 350px;
+    font-weight: bold;/*Deixar mais gordinha font*/
+    margin-bottom: 1em;
+    color: white;
+}
+
+#disclaimer p {
+    font-size: 1.2em;
+    margin-bottom: .3em;
+}
+
+#subscription-form{
+    background-color: var(--secondary);
+    padding: 2em;
+    max-width: 22%;/*Uma medida boa para desktop*/
+    max-height: 80%;
+}
+
+#subscription-form p{
+    font-size: 1.5em;
+    color:var(--text-color);
+    margin-bottom: 1em;
+}
+
+.form-group{/*Lembra que class é .*/
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.8em;
+}
+
+.form-group label{
+    color: var(--text-tertiary);
+    margin-bottom: .1em;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select{
+    padding: 6px 8px;
+    border-radius: 5px;
+    border: none;/*Tirar linha preta */
+    outline:none;/*Aqui fica sem a linha preta quando clica no input*/
+}
+
+#btnEnviar{
+    background-color: rgba(33, 124, 24, 0.7);
+    color: var(--text-color);
+    text-transform: uppercase;
+    width: 100%;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#btnEnviar:hover{
+    opacity: 1;
+}
+
+/*Benefits section*/
+
+#key-products h2{
+    background-color: var(--secondary);
+    text-align: center;
+    padding: 2em;
+    font-weight: 500;
+}
+
+.products{
+    display: flex;
+    justify-content: space-around;
+    padding: 4em;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.product{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 20%;
+    color: var(--text-tertiary);
+}
+
+.product .product-img{
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 1em;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+#product-1{
+    background-image: url("../img/Brasil-camisa.jpg");
+}
+#product-2{
+    background-image: url("../img/Brasil-shorts.jpg");
+}
+#product-3{
+    background-image: url("../img/Brasil-kit.jpg");
+}
+
+/*Event location*/
+
+#location{
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+    url("../img/003.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 85vh;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 3em;
+}
+
+#address, #about-location{
+    max-width: 30%;
+}
+
+#address{
+    display: flex;
+}
+
+#address i{
+    color: var(--primeiro);
+    font-size: 4em;
+    margin-right: 0.5em;
+}
+
+#address-details{
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#about-location h3{
+    color: var(--primeiro);
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+#about-location p{
+    line-height: 1.5em ;
+}
+
+/*Event details*/
+
+#details{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.details{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5%;
+    margin-bottom: 4em;
+}
+
+.details img{
+    width: 50%;
+
+}
