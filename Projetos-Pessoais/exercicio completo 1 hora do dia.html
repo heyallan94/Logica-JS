@@ -1,0 +1,109 @@
+<!--Esse exercicio poderia ter sido separado em 3 partes, html, css e o js. Mas preferi colocar tudo junto-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio completo 1</title>
+
+    <style>
+
+        body{
+            background-color: rgb(99, 101, 201);
+            font: normal 15pt Arial;
+            text-align: center;
+        }
+
+        a{/*Da para colocar o elemento todo no css*/
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            
+        }
+
+        section{
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            
+        }
+        section:hover{
+            transition: 0.5s;
+            box-shadow: 3px 3px 10px rgb(255, 0, 0);   
+        }
+        
+        footer{
+            font-style: italic;
+            color: white;
+            text-align: center;
+        }
+
+        .imagem:hover{
+            box-shadow: 3px 3px 10px rgb(255, 0, 0);
+        }
+    </style>
+
+</head>
+<body>
+<a href=""><!--href="" dá reload na página-->
+    Hora do dia
+</a>
+
+    <section>
+      <p id="msg">
+        Clique no botão para saber a hora
+      </p>
+      <div id="foto">
+          <img id="imagem" src="Hora.png" alt="foto dia"><br><!--src="arquivo" para colocar uma imagem-->
+          <input id= "btn" type="button" value="Click" onclick="botao()"><!--Apenas um input-->
+      </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; Allan2022</p>
+    </footer>  
+</body>
+
+<script>
+    let img = document.getElementById('imagem')
+    let msg = document.getElementById('msg')
+    let horario = new Date()//pegar informações sobre DATA(Hora, dia, minutos, segundos,etc )
+    let hora = horario.getHours()
+    let min = horario.getMinutes()
+    let bari = document.body//a variavel bari recebe o conteúdo de body, tem outra maneira de fazer isso...
+
+    function botao(){
+        //hora = 25 Apague as // para alterar as horas que queira
+                       
+        if(hora >= 0 && hora <8){
+            img.src = 'Cama.png'
+            msg.innerHTML = `São ${hora}:${min}, você deveria estar dormindo.`
+            bari.style.background = 'black'
+        }
+        else if(hora >= 8 && hora <13){
+            img.src = 'Sol.png'
+            msg.innerHTML = `São ${hora}:${min}, bom ínicio de dia!`
+            bari.style.background = 'yellow'
+        }
+        else if(hora >= 13 && hora <18){
+            img.src = 'Tarde.png'
+            msg.innerHTML = `São ${hora}:${min}, boa tarde! Estamos na metade do dia!`
+            bari.style.background = 'gray'
+        }
+        else if(hora >= 18 && hora <=24){
+            img.src = 'Noite.png'
+            msg.innerHTML = `São ${hora}:${min} , boa noite, bom descanso!`
+            bari.style.background = 'dark-blue'
+        }
+        else if(hora >=25){
+        alert('Hora inválida!')}
+        }
+    
+
+</script>
+
+</html>
